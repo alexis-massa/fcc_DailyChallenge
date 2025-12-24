@@ -63,7 +63,7 @@ def main():
         "def main():\n"
         "    pass\n\n"
         "if __name__ == '__main__':\n"
-        "    main()\n"
+        "    print(main())\n"
     )
 
     # JavaScript file
@@ -73,7 +73,7 @@ def main():
         "function main() {\n"
         "\n"
         "}\n\n"
-        "main();\n"
+        "console.log(main());\n"
     )
 
     print(f"Created {folder_name}")
