@@ -8,6 +8,7 @@ from pathlib import Path
 # Challenge #1 metadata
 CHALLENGE_1_DATE = date(2025, 8, 11)
 
+
 def main():
     parser = argparse.ArgumentParser(
         description="Create a FreeCodeCamp daily challenge scaffold"
@@ -54,7 +55,9 @@ def main():
 
     day_path.mkdir()
 
-    challenge_url = f"https://www.freecodecamp.org/learn/daily-coding-challenge/{date_str}"
+    challenge_url = (
+        f"https://www.freecodecamp.org/learn/daily-coding-challenge/{date_str}"
+    )
 
     # Python file
     (day_path / "main.py").write_text(
@@ -77,6 +80,7 @@ def main():
     )
 
     print(f"Created {folder_name}")
+
 
 if __name__ == "__main__":
     main()

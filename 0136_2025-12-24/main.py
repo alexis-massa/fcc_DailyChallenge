@@ -3,10 +3,13 @@
 
 import re
 
-def parse_image(markdown:str):
-    alt, src = re.search(r"\!\[(.*?)\]\((.*?)\)", markdown).groups()
+
+def parse_image(markdown: str):
+    matches = re.search(r"\!\[(.*?)\]\((.*?)\)", markdown)
+    assert matches is not None, "img markdown has incorrect format."
+    alt, src = matches.groups()
     return f'<img src="{src}" alt="{alt}">'
 
-if __name__ == '__main__':
-    print(parse_image("![Cute cat](cat.png)"))
 
+if __name__ == "__main__":
+    print(parse_image("![Cute cat](cat.png)"))

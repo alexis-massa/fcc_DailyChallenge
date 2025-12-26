@@ -1,0 +1,16 @@
+pre-commit:
+  parallel: true
+  commands:
+    python:
+      glob: "*.py"
+      run: |
+        ruff format {staged_files}
+        ruff check --fix {staged_files}
+      stage_fixed: true
+
+    javascript:
+      glob: "*.js"
+      run: |
+        npx prettier --log-level silent --write {staged_files}
+        npx eslint --fix {staged_files}
+      stage_fixed: true
