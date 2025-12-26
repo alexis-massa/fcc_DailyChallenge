@@ -1,5 +1,6 @@
 pre-commit:
   parallel: true
+  no_tty: true
   commands:
     python:
       glob: "*.py"
